@@ -1,63 +1,75 @@
 # Project information
-site_name: 'MPS Service'
-site_description: 'Management Presence Server (MPS) that will serve as the broker between the management console and the Intel® AMT clients'
-
-# Repository
-#repo_name: 'Danger-Bay/MPS_MicroService'
-#repo_url: 'https://github.impcloud.net/Danger-Bay/MPS_MicroService'
-
-# Copyright
-copyright: 'Copyright &copy; Intel Corporation 2019'
-
+site_name: 'Active Edge: Remote Edge Management Toolkit'
+repo_url: 'https://github.com/open-amt-cloud-toolkit/mps'
+repo_name: 'open-amt-cloud-toolkit/mps'
+copyright: 'Copyright &copy; 2020 Intel Corporation'
 # Configuration
 theme:
   name: 'material'
   language: 'en'
-  palette:
-    primary: 'Light Blue'
-    accent: 'Light Blue'
+  logo: 'assets/images/logo-white-75px.png'
+  # palette:
+  #   primary: 'Light Blue'
+  #   accent: 'Light Blue'
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
-    
+  features:
+    - navigation.tabs
 # Page tree
 nav:
-  - Activate AMT: activateAMT.md
-  - Getting started: index.md
-  - API: api.md
-  - Admin Methods: 
-    - All Devices: methods/alldevices.md
-    - Connected Devices: methods/connecteddevices.md
-    - Disconnect: methods/disconnect.md
-    - MEScript: methods/mescript.md
-    - MPS Root Certificate: methods/rootcertificate.md
-  - AMT Methods:
-    - Audit log: methods/auditlog.md
-    - Event log: methods/eventlog.md
-    - General settings: methods/generalsettings.md
-    - Hardware information: methods/hardwareinfo.md
-    - Power action: methods/poweraction.md
-    - Power capabilities: methods/powercapabilities.md
-    - Power state: methods/powerstate.md
-    - Version: methods/version.md
-  - Types: 
-    - Request body: methods/types.md
-    - Response error body: methods/types.md
-    - Audit log: methods/types.md 
-    - Event log: methods/types.md
-    - General Settings: methods/types.md
-    - Hardware information: methods/types.md
-    - Power action: methods/types.md
-    - Power capabilities: methods/types.md
-    - Power state: methods/types.md
-    - Version: methods/types.md
+  - Home: index.md
+  - Getting Started:
+    - Installation MPS & RPS :
+      - Local Setup:
+        - Overview: Local/overview.md
+        - Install MPS Locally: Local/installMPS.md
+        - Install RPS Locally: Local/installRPS.md
+      - Docker* Images:
+        - Overview: Docker/overview.md
+        - Build Docker* Images: Docker/dockerLocal.md
+  - Microservices:
+    - Managed Presence Server:
+      - MPS Device Management: General/manageDevice.md
+    - Remote Provisioning Server:
+      - Login to RPS: General/loginToRPS.md
+      - Create a CIRA Config: General/createCIRAConfig.md
+      - Create a Profile with CCM: General/createProfileCCM.md
+      - Create a Profile with ACM: General/createProfileACM.md  
+    - Remote Provisioning Client :
+      - Build & Run RPC (GitHub Actions): General/buildRPC_GithubActions.md
+      - Build & Run RPC (manual): General/buildRPC.md
+  - Tutorials:
+    - Docker Images on the Cloud: Docker/dockerCloud.md
+    - Create Consoles with the UI Toolkit: Tutorials/uitoolkit.md
+    - Construct a REST API Call: Tutorials/apiTutorial.md
+    - Add a Database: Tutorials/addDatabase.md
+    - Add Vault Storage: Tutorials/addVault.md
+    - Use an Allowlist: Tutorials/allowlist.md
+  - APIs:
+    - MPS Methods: APIs/indexMPS.md
+    - RPS Methods: APIs/indexRPS.md
+  - Security: security.md
+  - Active Edge Topics:
+    - Static and Dynamic IPs: Topics/misc.md
+    - GUIDs in Intel AMT: Topics/guids.md
+    - Manually Configure and Unprovision: Topics/mebx.md
+    - Proxies: Topics/proxies.md
   - Release notes: release-notes.md
   - License: license.md
+  - Troubleshooting: troubleshooting.md
   
 # Extensions
 markdown_extensions:
   - admonition
+  - pymdownx.details
+  - pymdownx.tabbed
+  - attr_list
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
   - codehilite:
       guess_lang: false
   - toc:
       permalink: true
+extra_css:
+  - assets\stylesheets\branding.css
